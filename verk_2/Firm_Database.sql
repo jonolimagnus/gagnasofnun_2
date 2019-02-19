@@ -7,8 +7,7 @@ create table Firm
 (
 	firmID int primary key,
     c_name char(75),
-    telephone_1 char(10),
-    telephone_2 char(10),
+    
     Email varchar(125),
     CEO varchar(75),
     companySlogan char(25),
@@ -42,6 +41,13 @@ create table Staff
     homePhone char(10),
     mobilePhone char(10),
     worksIn int references FirmDivisions(divisionID)    
+);
+
+CREATE TABLE contacts
+(
+	c_name int primary key,
+    telephone_1 char(10),
+    telephone_2 char(10),
 );
 
 CREATE TABLE PostalCode
