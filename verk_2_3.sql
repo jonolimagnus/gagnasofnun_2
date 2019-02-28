@@ -1,13 +1,13 @@
-drop database if exists TheFirm;
-create database TheFirm;
-use TheFirm;
+drop database if exists 2611982589_TheFirm;
+create database 2611982589_TheFirm;
+use 2611982589_TheFirm;
 
 
 create table Firm
 (
 	firmID int primary key,
     c_name char(75),
-    
+		postalcode int,
     Email varchar(125),
     CEO varchar(75),
     companySlogan char(25),
@@ -37,17 +37,16 @@ create table Staff
 	staffID int primary key,
     staffName varchar(75),
     jobTitle varchar(55),
-    jobPhone char(10),
-    homePhone char(10),
-    mobilePhone char(10),
     worksIn int references FirmDivisions(divisionID)    
 );
 
 CREATE TABLE contacts
 (
-	c_name int primary key,
-    telephone_1 char(10),
-    telephone_2 char(10),
+	staffName int primary key,
+    vinnusimi char(10),
+    gemsi char(10),
+    heimasimi char(10),
+    constraint staff_fk foreign key (staffID) references Staff(staffID)
 );
 
 CREATE TABLE PostalCode
