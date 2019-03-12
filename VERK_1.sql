@@ -145,5 +145,5 @@ VALUE
 	(21231,103,'D\&E Supply','Singh','0181','228-3245');
     
 
-select * from vendor and product and custumor and empoyees and line and invoice;
+select * from vendor;
 

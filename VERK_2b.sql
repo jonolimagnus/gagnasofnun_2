@@ -13,15 +13,16 @@ insert into Undirskolar(heiti,skolaNumer)values('Upplýsingatækniskólinn',1);
 insert into Undirskolar(heiti,skolaNumer)values('Vefskólinn',1);
 insert into Undirskolar(heiti,skolaNumer)values('Véltækniskólinn',1);
 
-insert into Brautir(heitiBrautar,tilheyrir)values('Bókband',10);
-insert into Brautir(heitiBrautar,tilheyrir)values('Grafísk miðlun',10);
-insert into Brautir(heitiBrautar,tilheyrir)values('Grunnnám upplýsinga- og fjölmiðlagreina',10);
-insert into Brautir(heitiBrautar,tilheyrir)values('K2 - Stúdentsleið',10);
-insert into Brautir(heitiBrautar,tilheyrir)values('Ljósmyndun',10);
-insert into Brautir(heitiBrautar,tilheyrir)values('Prentiðn',10);
-insert into Brautir(heitiBrautar,tilheyrir)values('Tölvubraut - stúdentspróf',10);
-insert into Brautir(heitiBrautar,tilheyrir)values('Grunnnám tölvubraut - dreifnám',10);
-insert into Brautir(heitiBrautar,tilheyrir)values('Grunnnám upplýsinga- og fjölmiðlagreina - dreifnám',10);
+insert into Brautir(brautarNumer,heitiBrautar,tilheyrir)values(1,'Bókband',10);
+insert into Brautir(brautarNumer,heitiBrautar,tilheyrir)values(2,'Grafísk miðlun',10);
+insert into Brautir(brautarNumer,heitiBrautar,tilheyrir)values(3,'Grunnnám upplýsinga- og fjölmiðlagreina',10);
+insert into Brautir(brautarNumer,heitiBrautar,tilheyrir)values(4,'K2 - Stúdentsleið',10);
+insert into Brautir(brautarNumer,heitiBrautar,tilheyrir)values(5,'Ljósmyndun',10);
+insert into Brautir(brautarNumer,heitiBrautar,tilheyrir)values(6,'Prentiðn',10);
+insert into Brautir(brautarNumer,heitiBrautar,tilheyrir)values(7,'Tölvubraut - stúdentspróf',10);
+insert into Brautir(brautarNumer,heitiBrautar,tilheyrir)values(8,'Grunnnám tölvubraut - dreifnám',10);
+insert into Brautir(brautarNumer,heitiBrautar,tilheyrir)values(9,'Grunnnám upplýsinga- og fjölmiðlagreina - dreifnám',10);
+insert into Brautir(brautarNumer,heitiBrautar,tilheyrir)values(10,'grunnnám rafiðna',10);
 
 insert into Afangar(afangaNumer,afangaHeiti)values('DANS2BM05AT','Danska');
 insert into Afangar(afangaNumer,afangaHeiti)values('ENSK2AE05AT','Enska 1');
@@ -82,19 +83,23 @@ insert into Afangar(afangaNumer,afangaHeiti)values('VEFÞ3VL05EU','Vefforritun 2
 insert into Afangar(afangaNumer,afangaHeiti)values('ÍSLE3BF05CT','Íslenska 3');
 insert into Afangar(afangaNumer,afangaHeiti)values('ÍSLE3LF05CT','Íslenska 4');
 insert into Afangar(afangaNumer,afangaHeiti)values('ÍSLE3NB05CT','Íslenska 5');
+insert into Afangar(afangaNumer,afangaHeiti)values('SKYN2SE01AT','Skyndihjálp');
+insert into Afangar(afangaNumer,afangaHeiti)values('RAFL1GA03AR','Raflagnir 1');
+insert into Afangar(afangaNumer,afangaHeiti)values('RAFL1GA03BR','Raflagnir 2');
+insert into Afangar(afangaNumer,afangaHeiti)values('RAFM1GA05AR','Rafmagnsfræði 1');
 
 insert into AfangaFrambod(brautarNumer,afangaNumer,onnAfanga,skylda)
-values(7,'DANS2BM05AT',5,true),
-	  (7,'ENSK2AE05AT',1,true),
-      (7,'ENSK2OF05BT',2,true),
+values(1,'DANS2BM05AT',5,true),
+	  (1,'ENSK2AE05AT',1,true),
+      (1,'ENSK2OF05BT',2,true),
       (7,'EÐLI2GR05BT',3,true),
-      (7,'FORR1FG05AU',1,true),
-      (7,'FORR2FA05BU',2,true),
-      (7,'FORR2HF05CU',3,true),
-      (7,'GAGN1NG05AU',2,true),
-      (7,'KEST1TR05AU',1,true),
-      (7,'KEST2UN05CU',3,true),
-      (7,'KEST2VJ05BU',2,true),
+      (8,'FORR1FG05AU',1,true),
+      (8,'FORR2FA05BU',2,true),
+      (8,'FORR2HF05CU',3,true),
+      (9,'GAGN1NG05AU',2,true),
+      (8,'KEST1TR05AU',1,true),
+      (8,'KEST2UN05CU',3,true),
+      (8,'KEST2VJ05BU',2,true),
       (7,'LÍFS1GR05AT',1,true),
       (7,'MENL1AL05AT',2,true),
       (7,'STÆR2AH05BT',2,true),
@@ -123,9 +128,9 @@ values(7,'DANS2BM05AT',5,true),
       (7,'FORR3NÞ05DU',4,false),
       (7,'FORR3RR05DU',4,false),
       (7,'FORR4CF05EU',6,false),
-      (7,'GAGN2HS05BU',4,false),
-      (7,'GAGN2VG05CU',5,false),
-      (7,'GAGN3GS05DU',6,false),
+      (9,'GAGN2HS05BU',4,false),
+      (9,'GAGN2VG05CU',5,false),
+      (9,'GAGN3GS05DU',6,false),
       (7,'KEST2CG05DU',4,false),
       (7,'KEST2LG05DU',4,false),
       (7,'KEST2WG05DU',4,false),
@@ -140,9 +145,13 @@ values(7,'DANS2BM05AT',5,true),
       (7,'ROBO3RF05BU',6,false),
       (7,'VEFÞ2VÞ05DU',4,false),
       (7,'VEFÞ3VL05EU',5,false),
-      (7,'ÍSLE3BF05CT',3,false),
-      (7,'ÍSLE3LF05CT',3,false),
-      (7,'ÍSLE3NB05CT',3,false);
+      (1,'ÍSLE3BF05CT',3,false),
+      (1,'ÍSLE3LF05CT',3,false),
+      (1,'ÍSLE3NB05CT',3,false),
+      (7,'SKYN2SE01AT',1,false),
+      (10,'RAFL1GA03AR',1,false),
+      (10,'RAFL1GA03BR',2,false),
+      (10,'RAFM1GA05AR',3,false);
       
 insert into Undanfarar(undanfaraNumer,afangaNumer,tegund)values('GAGN2HS05BU','GAGN1NG05AU',1);
 insert into Undanfarar(undanfaraNumer,afangaNumer,tegund)values('GAGN2VG05CU','GAGN2HS05BU',1);

@@ -66,7 +66,7 @@ create table AfangaFrambod
   onnAfanga tinyint null default null,
   skylda boolean default True,
   constraint afangar_brauta_PK primary key(brautarNumer, afangaNumer),
-  constraint frambod_afangi_FK foreign key (afangaNumer) references Afangar (afangaNumer),
+  constraint frambod_afangi_FK foreign key (afangaNumer) references Afangar(afangaNumer),
   constraint frambod_namsleid_FK foreign key (brautarNumer) references Brautir(brautarNumer)
 );
 
