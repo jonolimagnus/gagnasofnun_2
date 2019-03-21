@@ -1,5 +1,5 @@
 -- ------------------
--- 1: buinn
+-- 1:
 -- Sækja nemendur sem fæddir eru á milli 1998 og 2000, bæði árin meðtalin.
 -- Setjið fornafn og eftirnafn saman með concat() fallinu.
 -- Birtið allar upplýsingar um nemendurna og raðið niðurstöðum eftir fæðingardegi, þeir yngstu fyrst.
@@ -8,7 +8,7 @@
 SELECT sum(faedingardagur) FROM Nemendur
 where faedingardagur between '1998-00-00' and '2000-12-31';
 
-select concat(fornafn,' ',eftirnafn) AS nafn
+select nemnemendaNumer concat(fornafn,' ',eftirnafn) AS nafn
 from Nemendur;
 
 select * from Nemendur
@@ -53,7 +53,6 @@ order by faedingardagur asc;
 -- ------------------
 
 
-
 -- ------------------
 -- 5:
 -- Notið select skipun með case - when útfærslu til að finna út hvort einhver nemandi skráðir sig í áfanga á afmælsidaginn sinn. 
@@ -91,8 +90,6 @@ order by faedingardagur asc;
 -- 9:
 -- Bætið nú fyrirspurn 7 þannig að í stað 1, 2 og 3 fyrir tegund komi sami texti og í lið 2.
 -- ------------------
-
-
 
 -- ------------------
 -- 10:

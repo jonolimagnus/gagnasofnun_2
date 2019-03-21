@@ -105,5 +105,4 @@ create table Nemendaskraning(
     nemandiID int(11),
     einkunn char(15),
     CONSTRAINT afanga_skraning_FK foreign key (afangaNumer) references Afangar(afangaNumer)
-    
 );
