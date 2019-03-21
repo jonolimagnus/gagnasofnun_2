@@ -3,6 +3,8 @@
 -- Skrifið function, FjoldiSkylduafanga sem skilar fjölda skylduáfanga á ákveðinni braut.
 -- brautarnúmerið er sent inn sem færibreyta
 -- --------------------------
+drop function if exists Fjoldiskylduafanga
+
 
 
 -- --------------------------
