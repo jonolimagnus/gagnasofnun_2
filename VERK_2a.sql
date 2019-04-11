@@ -79,9 +79,9 @@ create table Undanfarar
   undanfaraNumer char(15) not null,
   afangaNumer char(15) not null,
   tegund char(1) null default '1',	-- 1 = undanfari, 2 = má taka með, 3 = verður að taka með.
-  primary key (afangaNumer, undanfaraNumer),
-  constraint afangi_afangi_FK foreign key (afangaNumer) references Afangar(afangaNumer),
-  constraint undanfari_afangi_FK foreign key (undanfaraNumer) references Afangar(afangaNumer)
+  primary key (undanfaraNumer),-- afangaNumer, 
+  constraint afangi_afangi_FK foreign key (afangaNumer) references Afangar(afangaNumer)
+  -- constraint undanfari_afangi_FK foreign key (undanfaraNumer) references Afangar(afangaNumer)
 );
 
 
@@ -90,10 +90,11 @@ create table Undanfarar
 -- ------------------------------------------------------
 create table Nemendur(
 	nemendaNumer int(11) not null,
+    nemandiID int not null,
     fornafn varchar(70),
     eftirnafn varchar(75),
     faedingardagur char(10),
-	PRIMARY KEY (nemendaNumer)
+	PRIMARY KEY (nemandiID)
 );
 
 -- ------------------------------------------------------
@@ -104,6 +105,7 @@ create table Nemendaskraning(
     afangaNumer char(15),
     nemandiID int(11),
     einkunn char(15),
-    CONSTRAINT afanga_skraning_FK foreign key (afangaNumer) references Afangar(afangaNumer)
+    CONSTRAINT afanga_skraning_FK foreign key (afangaNumer) references Afangar(afangaNumer),
+    CONSTRAINT nemandiID_fk foreign key (nemandiID) references Nemendur(nemandiID)
     
 );

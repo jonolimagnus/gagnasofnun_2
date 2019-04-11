@@ -157,18 +157,18 @@ insert into Undanfarar(undanfaraNumer,afangaNumer,tegund)values('GAGN2HS05BU','G
 insert into Undanfarar(undanfaraNumer,afangaNumer,tegund)values('GAGN2VG05CU','GAGN2HS05BU',1);
 insert into Undanfarar(undanfaraNumer,afangaNumer,tegund)values('GAGN3GS05DU','GAGN2VG05CU',2);	
 
-insert into Nemendur(nemendaNumer,fornafn,eftirnafn,faedingardagur)values(10323,'Berit','Olsen','1998-09-01');
-insert into Nemendur(nemendaNumer,fornafn,eftirnafn,faedingardagur)values(10435,'Snorri','Birgisson','2001-06-25');	
-insert into Nemendur(nemendaNumer,fornafn,eftirnafn,faedingardagur)values(10456,'Vilborg','Benediktsdóttir','2001-12-24');	
-insert into Nemendur(nemendaNumer,fornafn,eftirnafn,faedingardagur)values(10965,'Jasmine','Larsson','1996-09-21');	
-insert into Nemendur(nemendaNumer,fornafn,eftirnafn,faedingardagur)values(10896,'Steinn','Halldórsson','2001-09-12');	
-insert into Nemendur(nemendaNumer,fornafn,eftirnafn,faedingardagur)values(19076,'Kristian','Berg','1998-04-03');	
-insert into Nemendur(nemendaNumer,fornafn,eftirnafn,faedingardagur)values(12345,'Edda','Elísdóttir','1998-04-12');	
-insert into Nemendur(nemendaNumer,fornafn,eftirnafn,faedingardagur)values(13425,'Helgi','Sigurðsson','2000-09-11');	
-insert into Nemendur(nemendaNumer,fornafn,eftirnafn,faedingardagur)values(14563,'Ásgeir','Friðriksson','1999-06-15');	
-insert into Nemendur(nemendaNumer,fornafn,eftirnafn,faedingardagur)values(15649,'María','Grétarsdóttir','1999-05-05');	
+insert into Nemendur(nemendaNumer,nemandiID,fornafn,eftirnafn,faedingardagur)values(10323,1,'Berit','Olsen','1998-09-01');
+insert into Nemendur(nemendaNumer,nemandiID,fornafn,eftirnafn,faedingardagur)values(10435,2,'Snorri','Birgisson','2001-06-25');	
+insert into Nemendur(nemendaNumer,nemandiID,fornafn,eftirnafn,faedingardagur)values(10456,3,'Vilborg','Benediktsdóttir','2001-12-24');	
+insert into Nemendur(nemendaNumer,nemandiID,fornafn,eftirnafn,faedingardagur)values(10965,4,'Jasmine','Larsson','1996-09-21');	
+insert into Nemendur(nemendaNumer,nemandiID,fornafn,eftirnafn,faedingardagur)values(10896,5,'Steinn','Halldórsson','2001-09-12');	
+insert into Nemendur(nemendaNumer,nemandiID,fornafn,eftirnafn,faedingardagur)values(19076,6,'Kristian','Berg','1998-04-03');	
+insert into Nemendur(nemendaNumer,nemandiID,fornafn,eftirnafn,faedingardagur)values(12345,7,'Edda','Elísdóttir','1998-04-12');	
+insert into Nemendur(nemendaNumer,nemandiID,fornafn,eftirnafn,faedingardagur)values(13425,8,'Helgi','Sigurðsson','2000-09-11');	
+insert into Nemendur(nemendaNumer,nemandiID,fornafn,eftirnafn,faedingardagur)values(14563,9,'Ásgeir','Friðriksson','1999-06-15');	
+insert into Nemendur(nemendaNumer,nemandiID,fornafn,eftirnafn,faedingardagur)values(15649,10,'María','Grétarsdóttir','1999-05-05');	
 
-insert into Nemendaskraning(dagsetning,afangaNumer,nemandiID,einkunn)values('2013-08-01','ENSK2AE05AT',4,6);
+insert into Nemendaskraning(dagsetning,afangaNumer,nemandiID,einkunn)values('2013-09-21','ENSK2AE05AT',4,6);
 insert into Nemendaskraning(dagsetning,afangaNumer,nemandiID,einkunn)values('2013-08-01','STÆR2BR05AT',4,7);
 insert into Nemendaskraning(dagsetning,afangaNumer,nemandiID,einkunn)values('2013-08-01','FORR1FG05AU',4,7);
 insert into Nemendaskraning(dagsetning,afangaNumer,nemandiID,einkunn)values('2013-08-01','LÍFS1GR05AT',4,9);

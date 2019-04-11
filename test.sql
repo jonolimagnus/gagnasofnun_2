@@ -9,9 +9,9 @@ create procedure nyrAfangi
 )
 begin
 	 insert into Afangar(afangaNumer,afangaHeiti,einingar)
-	 values(afanga_numer,a_heiti,aeiningar);
+	 values(afanga_numer,a_heiti,a_eining);
      
-     select row_count()
+     select row_count();
 end $$
 
 -- select * from afangar$$
