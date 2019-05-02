@@ -76,15 +76,23 @@ set afangaNumer ='GAGN2HS05BU' where afangaNumer = 'GAGN1NG05AU';
 
 
 -- ------------------
--- 4:
+-- 4: buið
 -- Þegar nemandi skráir sig í áfanga úthlutar kerfið svokölluðu skráningarnúmeri. 
 -- Í þessari fyrirspurn þarf að skoða heiti þeirra áfanga sem hafa slíkt númer.
 -- Ekki er þörf á að birta áfanganúmer heldur aðeins áfangaheiti og skráninganúmerið.
 -- ------------------
+select count(afangaNumer) from Nemendaskraning
+where afangaNumer like 'ENSK2AE05AT';
 
-select concat(afangaHeiti, " ", Nemendaskraning.nemandiID) as heiti
-from Afangar, Nemendaskraning, nemendur
-where Nemendaskraning.nemandiID = Nemendur.nemandiID;
+select Afangar.afangaHeiti, Nemendaskraning.nemandiID
+from Afangar
+inner join Nemendaskraning on Nemendaskraning.afangaNumer = Afangar.afangaNumer
+left join nemendur on Nemendaskraning.nemandiID = Nemendur.nemandiID
+order by Afangar.afangaNumer;
+
+-- select concat(afangaHeiti, " ", Nemendaskraning.nemandiID) as heiti
+-- from Afangar, Nemendaskraning
+-- inner join nemendur on Nemendaskraning.nemandiID = Nemendur.nemandiID;
 
 -- ------------------
 -- 5: ekki buið
@@ -113,21 +121,21 @@ from nemendaskraning;
 -- Notið staðgengla til að birta upplýsingar um áfanga og undanfara þeirra.
 -- Birtið áfagnanúmerið, áfangaheitið, undanfaranúmerið, undanfarheitið' og tegund undanfara(það nægir að nota 1, 2 eða 3)
 -- ------------------
-
-select * from Afangar, undanfarar
-where Afangar.afangaNumer = undanfarar.undanfaraNumer;
+select Afangar.afangaNumer, Afangar.afangaHeiti, undanfarar.undanfaraNumer, undanfarar.afangaNumer, undanfarar.tegund
+from Afangar
+inner join undanfarar on Afangar.afangaNumer = undanfarar.undanfaraNumer;
+-- where 
 
 -- ------------------
--- 8: not a clue
+-- 8: buið
 -- Útfærið fyrirspurnina úr lið 7 þannig að birtar séu upplýsingar um alla áfanga óháð því 
 -- hvort þeir eru með undanfara eða ekki.
 -- ------------------
 
-select * from Afangar, undanfarar
-where Afangar.afangaNumer = undanfarar.undanfaraNumer,
-and
-select * from Afangar
-where  Afangar.afangaNumer != undanfarar.undanfaraNumer;
+select Afangar.afangaNumer, Afangar.afangaHeiti, undanfarar.undanfaraNumer, undanfarar.afangaNumer, undanfarar.tegund
+from Afangar
+left outer join undanfarar on Afangar.afangaNumer = undanfarar.undanfaraNumer;
+
 
 -- ------------------
 -- 9: buið

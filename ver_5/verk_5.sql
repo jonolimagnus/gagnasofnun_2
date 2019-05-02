@@ -3,8 +3,12 @@
 -- Skrifið function, FjoldiSkylduafanga sem skilar fjölda skylduáfanga á ákveðinni braut.
 -- brautarnúmerið er sent inn sem færibreyta
 -- --------------------------
-drop function if exists Fjoldiskylduafanga
 
+select count(skylda) as fjoldiSkylduafanga, brautarNumer
+from AfangaFrambod
+where skylda like true and skylda like brautarNumer;
+
+-- inner join AfangaFrambod A on skylda = A.brautarNumer
 
 
 -- --------------------------
@@ -81,6 +85,8 @@ drop function if exists Fjoldiskylduafanga
 -- --------------------------
 -- 10:
 -- Skrifið VIEW, AfangaframbodUndirskola.
--- Birtið heiti skóla, heiti undirskóla, heiti brauta, afanganúmer, áfangaheiti, önn áfangans og hvort áfangin er skylda.
+-- Birtið heiti skóla, heiti undirskóla, heiti brauta, afanganúmer, áfangaheiti,
+-- önn áfangans og hvort áfangin er skylda.
 -- raðið eftir skólaheiti, undirskólaheiti, brautarheiti.
 -- --------------------------
+
