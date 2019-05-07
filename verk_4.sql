@@ -38,7 +38,7 @@ end as undanfarir
 from Undanfarar;
 
 -- ------------------
--- 3: buið
+-- 3:
 -- þegar select skipunin úr lið 2 er keyrð fást eftirfarandi niðurstöður
 -- ef verið er að nota upphaflegu gögnin í námsferils grunninum:
 -- 
@@ -76,26 +76,17 @@ set afangaNumer ='GAGN2HS05BU' where afangaNumer = 'GAGN1NG05AU';
 
 
 -- ------------------
--- 4: buið
+-- 4:
 -- Þegar nemandi skráir sig í áfanga úthlutar kerfið svokölluðu skráningarnúmeri. 
 -- Í þessari fyrirspurn þarf að skoða heiti þeirra áfanga sem hafa slíkt númer.
 -- Ekki er þörf á að birta áfanganúmer heldur aðeins áfangaheiti og skráninganúmerið.
 -- ------------------
-select count(afangaNumer) from Nemendaskraning
-where afangaNumer like 'ENSK2AE05AT';
 
-select Afangar.afangaHeiti, Nemendaskraning.nemandiID
-from Afangar
-inner join Nemendaskraning on Nemendaskraning.afangaNumer = Afangar.afangaNumer
-left join nemendur on Nemendaskraning.nemandiID = Nemendur.nemandiID
-order by Afangar.afangaNumer;
-
--- select concat(afangaHeiti, " ", Nemendaskraning.nemandiID) as heiti
--- from Afangar, Nemendaskraning
--- inner join nemendur on Nemendaskraning.nemandiID = Nemendur.nemandiID;
+select afangaHeiti  and nemandiID from Afangar, Nemendaskraning
+where afangaNumer = 'ÍSLE2GO05BT';
 
 -- ------------------
--- 5: ekki buið
+-- 5:
 -- Notið select skipun með case - when útfærslu til að finna út hvort einhver nemandi skráðir sig í 
 -- áfanga á afmælsidaginn sinn. 
 -- Hér verið þið að nota fæðingardaginn og mánuðinn ekki árið!
@@ -117,52 +108,31 @@ from nemendaskraning;
 
 
 -- ------------------
--- 7: buið
+-- 7:
 -- Notið staðgengla til að birta upplýsingar um áfanga og undanfara þeirra.
 -- Birtið áfagnanúmerið, áfangaheitið, undanfaranúmerið, undanfarheitið' og tegund undanfara(það nægir að nota 1, 2 eða 3)
 -- ------------------
-select Afangar.afangaNumer, Afangar.afangaHeiti, undanfarar.undanfaraNumer, undanfarar.afangaNumer, undanfarar.tegund
-from Afangar
-inner join undanfarar on Afangar.afangaNumer = undanfarar.undanfaraNumer;
--- where 
+
+select * from Afangar, undanfarar
+where afangaNumer = afangaNumer;
 
 -- ------------------
--- 8: buið
+-- 8:
 -- Útfærið fyrirspurnina úr lið 7 þannig að birtar séu upplýsingar um alla áfanga óháð því 
 -- hvort þeir eru með undanfara eða ekki.
 -- ------------------
 
-select Afangar.afangaNumer, Afangar.afangaHeiti, undanfarar.undanfaraNumer, undanfarar.afangaNumer, undanfarar.tegund
-from Afangar
-left outer join undanfarar on Afangar.afangaNumer = undanfarar.undanfaraNumer;
 
 
 -- ------------------
--- 9: buið
+-- 9:
 -- Bætið nú fyrirspurn 7 þannig að í stað 1, 2 og 3 fyrir tegund komi sami texti og í lið 2.
 -- ------------------
 
-select *,
-case
-	when tegund = 1 then 'undanfari'
-    when tegund = 2 then 'má taka með'
-    when tegund = 3 then 'veður að taka með'
-    else 'er ekki undanfari'
-end as undanfarir
-from Afangar, Undanfarar
-where Afangar.afangaNumer = undanfarar.undanfaraNumer;
- 
 
 
 -- ------------------
--- 10:buið
+-- 10:
 -- Veljið upplýsingar um nemendur sem hafa valið áfanga sem er undanfari.
 -- Birtið nemanda ID, fornafn og eftirnafn samsett með concat() fallinu og undanfaranúmerið!
 -- ------------------
-
-select undanfaraNumer, concat(fornafn, " ",eftirnafn, " ", nemendur.nemandiID) as nemandi
-from Nemendaskraning, nemendur, undanfarar
-where Nemendaskraning.nemandiID = nemendur.nemandiID;
-
-
-

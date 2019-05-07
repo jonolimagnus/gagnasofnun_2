@@ -1,30 +1,45 @@
 -- --------------------------
--- 1:
+-- 1: buinn
 -- Skrifið function, FjoldiSkylduafanga sem skilar fjölda skylduáfanga á ákveðinni braut.
 -- brautarnúmerið er sent inn sem færibreyta
 -- --------------------------
 
-select count(skylda) as fjoldiSkylduafanga, brautarNumer
+select brautarNumer, count(skylda) as fjoldiSkylduafanga
 from AfangaFrambod
-where skylda like true and skylda like brautarNumer;
+where skylda like true
+group by brautarNumer;
 
 -- inner join AfangaFrambod A on skylda = A.brautarNumer
 
 
 -- --------------------------
--- 2:
+-- 2: buinn
 -- Skrifið function, Meðaleinkunn sem reiknar meðaleinkunn úr áföngum sem ákv. nemandi hefur lokið.
 -- Notið færibreytuna nemandi_id. 
 -- Til að forma kommutöluna þannig að hún hafi einn aukastaf og mest tvo tölustafi, t.d: 10.0 er
 -- sniðugt að nota float(3,1) sem return-gagnatag og rúnna svo meðaltalið með round() fallinu!
 -- --------------------------
 
+select nemandiID, sum(einkunn), round(einkunn, 1) as medaleinkunn 
+from Nemendaskraning
+group by nemandiID;
 
 -- --------------------------
 -- 3:
 -- Skrifið function, FjoldiUndanfara sem telur hve marga undanfara einhver ákveðinn áfangi hefur.
 -- Hafi áfangi engan undanfara þá er skilað 0
 -- --------------------------
+
+select Afangar.afangaNumer, count(Undanfarar.undanfaraNumer) as fjoldiundafara
+from Afangar, Undanfarar
+(case
+	when Afangar.afangaNumer like Undanfarar.afangaNumer then 'afangar með undanfara'
+	when Undanfarar.afangaNumer not like Afangar.afangaNumer then 0
+    else 'ekkert'
+end as fjoldiundanfara)
+group by Afangar.afangaNumer;
+
+-- where  or 
 
 
 -- --------------------------
@@ -34,6 +49,8 @@ where skylda like true and skylda like brautarNumer;
 -- gefa þarf upp bæði nemanda ID og brautarnúmer.
 -- --------------------------
 
+select nemandiID, brautaNumer
+from 
 
 -- --------------------------
 -- 5:

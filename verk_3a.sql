@@ -41,15 +41,29 @@ where afangaNumer LIKE 'e%';
 -- 6a:buinn
 -- skráið þessa áfanga í gagnagrunninn.
 
+
+-- insert into AfangaFrambod(brautarNumer,afangaNumer,onnAfanga,skylda)
+--      (7,'SKYN2SE01AT',1,false),
+ --     (10,'RAFL1GA03AR',1,false),
+--      (10,'RAFL1GA03BR',2,false),
+--      (10,'RAFM1GA05AR',3,false);
+
+
+
 -- 6b:buinn
 -- Þessir áfagnar eru kenndir í grunnnámi rafiðna sem er braut innan Raftækniskólans.
 -- Skráðið þessa braut í grunninn.
+
+-- insert into Undirskolar(heiti,skolaNumer)values('Raftækniskólinn',1);
 
 -- 6c:buinn
 -- Setjið þessa áfanga í framboð á nýju brautinni(Gunnnám rafiðna) með því að skrá 
 -- viðeigandi upplýsingar í töfluna Afangaframboð.
 
-
+-- insert into Afangar(afangaNumer,afangaHeiti)values('SKYN2SE01AT','Skyndihjálp');
+-- insert into Afangar(afangaNumer,afangaHeiti)values('RAFL1GA03AR','Raflagnir 1');
+-- insert into Afangar(afangaNumer,afangaHeiti)values('RAFL1GA03BR','Raflagnir 2');
+-- insert into Afangar(afangaNumer,afangaHeiti)values('RAFM1GA05AR','Rafmagnsfræði 1');
 
 -- 7:BUINN
 -- veljið allar upplýsingar um alla áfanga úr Afangatöflunni NEMA eftirfarandi:

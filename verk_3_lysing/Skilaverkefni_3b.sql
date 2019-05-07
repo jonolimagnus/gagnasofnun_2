@@ -4,7 +4,9 @@
 -- hvort áfanginn er skylda eða ekki.
 -- AHT: Hér þarf að nota inner join
 
-select * from Afangar;
+select Afangar.afangaNumer, Afangar.afangaHeiti, Nemendaskraning.einkunn, AfangaFrambod.onnAfanga, AfangaFrambod.skylda
+from Afangar, Nemendaskraning 
+inner join AfangaFrambod on Afangar.afangaNumer = AfangaFrambod.afangaNumer;
 
 
 -- 2:buinn
